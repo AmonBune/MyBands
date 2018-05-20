@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        
+		<meta name="description" content="">
+		<meta name="author" content="Manuel Bachmann">
+		<meta name="author" content="Nicole Stadelmann">
+		<title>MyBands</title>
+
+		<!-- Bootstrap CSS einbinden-->
+		<link href="css/bootstrap.css" rel="stylesheet">
+       
+
+		<!-- MyBands CSS einbinden-->
+		<link rel="stylesheet" href="main.css">
+
+		<!-- jQuery (notwendig für Bootstrap's JavaScript Plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+		<!-- Alle Plugins als verkleinerte Version laden -->
+		<script src="js/bootstrap.min.js"></script>
+		
+		<script>
+		function toggle_dropdown1()
+		{
+			if(document.getElementById('dropdown1').style.display == "none")
+			{
+				document.getElementById('dropdown1').style.display = "block";
+			}
+			else
+			{
+				document.getElementById('dropdown1').style.display = "none";
+			}
+		}
+		
+		function hide_dropdown1()
+		{
+			document.getElementById('dropdown1').style.display = "none";
+		}
+		
+		function openModal1() {
+		  document.getElementById('myModal1').style.display = "block";
+		}
+		
+		function openModal2() {
+		  document.getElementById('myModal2').style.display = "block";
+		}
+		
+		function openModal3() {
+		  document.getElementById('myModal3').style.display = "block";
+		}
+
+		function closeModal() {
+  		  document.getElementById('myModal1').style.display = "none";
+		  document.getElementById('myModal2').style.display = "none";		 
+		  document.getElementById('myModal3').style.display = "none";
+		}
+
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+            
+
+		</script>
+	</head>
+    <body data-spy="scroll" data-target=".navbar">	
+    <!-- NAVBAR
+    ================================================== -->
+
+	  <nav class="navbar navbar-inverse navbar-fixed-top">
+	  
+		<div class="container col-md-12 col-xs-12 col-sm-12 col-lg-12 col-cs-12">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<img src="images/mybands-logo-small.png"/>
+			</div>
+			<div>
+				 <div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li><a href="#StartKarussell" onclick="hide_dropdown1()">Start</a></li>
+						<li><a href="#sinndieserseite" onclick="hide_dropdown1()">Sinn dieser Seite</a></li>
+						<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#AlleBands" onclick="toggle_dropdown1()">Bands <span class="caret"></span></a>
+							<ul class="dropdown-menu" id="dropdown1">
+								<li><a href="#AlleBands" onclick="toggle_dropdown1()">Alle Bands</a></li>
+								<li><a href="#battlebeast" onclick="toggle_dropdown1()">Battle Beast</a></li>
+								<li><a href="#metallica" onclick="toggle_dropdown1()">Metallica</a></li>
+								<li><a href="#volbeat" onclick="toggle_dropdown1()">Volbeat</a></li>
+							</ul>
+						</li>
+						<li><a href="#impressum" onclick="hide_dropdown1()">Impressum</a></li>
+					</ul>
+				</div>
+			</div>
+		  </div>
+	  </nav> 
+        <!-- Karussell
+        ================================================== -->
+        
+        <div id="StartKarussell" class="carousel slide" data-ride="carousel"> <!--Div Start / Karusell -->
+          
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img class="first-slide" src="images/battlebeast_header.jpg" alt="Slide Battle Beast">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Battle Beast</h1>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="second-slide" src="images/metallica_header.jpg" alt="Slide Metallica">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Metallica</h1>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <img class="third-slide" src="images/volbeat_header.jpg" alt="Slide Volbeat">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>Volbeat</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="left carousel-control" href="#StartKarussell" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Zurück</span>
+          </a>
+          <a class="right carousel-control" href="#StartKarussell" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Weiter</span>
+          </a>
+        </div><!--Div Ende / Karusell -->
+        
+		
+		<div class="container marketing"> <!--Div Start / Ganzer Inhalt -->
+			
+			<!-- Abschnitt - Sinn dieser Seite 
+			================================================== -->
+            <div class="row" id="sinndieserseite">
+                <div class="col-lg-12">
+                    <h1 id="SinnDieserSeite">Sinn dieser Seite<a data-toggle="tooltip" data-placement="right" title="tooltip des todes"><i class="glyphicon glyphicon-star"></i></a></h1>
+					<p>Hallo Zusammen</p>
+					<p>Der Sinn dieser Seite ist [...] </p>
+				</div>
+            </div>
+		
+			 <!-- Abschnitt - Alle Bands 
+			================================================== -->           
+			<div id="AlleBands" class="row">
+				<div class="col-lg-12">
+                    <h1 id="SinnDieserSeite">Alle Bands<a data-toggle="tooltip" data-placement="right" title="tooltip des todes"><i class="glyphicon glyphicon-star"></i></a></h1>
+					<div id="BattleBeast" class="col-lg-4">
+						<a href="#battlebeast"><div class="polaroid battlebeast-band-pic-div">
+							<img id="band-pic" src="images/battlebeast_band_sw.jpg" onmouseover="this.src='images/battlebeast_band.jpg';" onmouseout="this.src='images/battlebeast_band_sw.jpg';" width="100%">
+							<div class="content">
+								<p>Battle Beast</p>
+							</div>
+                            </div> 
+                        </a>
+                        </div><!-- /.col-lg-4 -->
+						
+					<div id="Metallica" class="col-lg-4">
+						<a href="#metallica"><div class="polaroid ">
+							<img id="band-pic" src="images/metallica_band_sw.jpg" onmouseover="this.src='images/metallica_band.jpg';" onmouseout="this.src='images/metallica_band_sw.jpg';" width="100%">
+						<div class="content">
+							<p>Metallica</p>
+						</div>
+						</div>
+                    </a>
+					</div><!-- /.col-lg-4 -->
+						
+					<div id="Volbeat" class="col-lg-4">
+						<a href="#volbeat"> <div class="polaroid">
+							<img id="band-pic" src="images/volbeat_band_sw.jpg" onmouseover="this.src='images/volbeat_band.jpg';" onmouseout="this.src='images/volbeat_band_sw.jpg';" width="100%">
+						<div class="content">
+							<p>Volbeat</p>
+						</div>
+						</div>
+                        </a>
+					</div><!-- /.col-lg-4 -->
+				</div>
+			</div><!-- /.row -->
+			
+		   <!-- Abschnitt - Battle Beast 
+			================================================== -->    
+			<hr class="featurette-divider">
+
+			<div id="battlebeast" class="row featurette">
+				<div class="col-md-7">
+					<h1 id="BattleBeast">Battle Beast<a data-toggle="tooltip" data-placement="right" title="tooltip des todes"><i class="glyphicon glyphicon-star"></i></a></h1>
+					<p class="lead">asdf</p>
+					<p>Bastard son of Odin</p>
+					<audio controls>
+						<source src="music/battlebeast.mp3" type="audio/mp3">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+				
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive center-block" src="images/gif/battlebeast.gif" alt="Battlebeast Logo">
+				</div>
+			</div>
+			
+			<div class="container">
+				<div class="row">
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/battlebeast/battlebeast1-small.jpg" onclick="openModal1();currentSlide(1)" class="gallery-image hover-shadow">
+					</div>
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/battlebeast/battlebeast2-small.jpg" onclick="openModal1();currentSlide(2)" class="gallery-image hover-shadow">
+					</div>
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/battlebeast/battlebeast3-small.png" onclick="openModal1();currentSlide(3)" class="gallery-image hover-shadow">
+					</div>
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/battlebeast/battlebeast4-small.png" onclick="openModal1();currentSlide(4)" class="gallery-image hover-shadow">
+					</div>
+				</div>
+			</div>
+				
+		    <!-- Abschnitt - Metallica
+			================================================== -->         
+			<hr class="featurette-divider">
+
+			<div id="metallica" class="row featurette">
+				<div class="col-md-7">
+					<h1 id="Metallica">Metallica<a data-toggle="tooltip" data-placement="right" title="tooltip des todes"><i class="glyphicon glyphicon-star"></i></a></h1>
+					<p class="lead">asdf</p>
+					<p>Nothing else matters</p>
+					<audio controls>
+						<source src="music/metallica.mp3" type="audio/mp3">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+				
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive center-block" src="images/gif/metallica.gif" alt="Metallica Logo">
+				</div>
+			</div>   
+			
+			<div class="container">
+				<div class="row">
+					<div class="container">
+						<div class="row">
+							<div class="column col-md-6 col-sm-6 col-xs-12">
+								<img src="images/gallery/metallica/metallica1-small.jpg" onclick="openModal2();currentSlide(5)" class="gallery-image hover-shadow">
+							</div>
+							<div class="column col-md-6 col-sm-6 col-xs-12">
+								<img src="images/gallery/metallica/metallica2-small.jpg" onclick="openModal2();currentSlide(6)" class="gallery-image hover-shadow">
+							</div>
+							<div class="column col-md-6 col-sm-6 col-xs-12">
+								<img src="images/gallery/metallica/metallica3-small.jpg" onclick="openModal2();currentSlide(7)" class="gallery-image hover-shadow">
+							</div>
+							<div class="column col-md-6 col-sm-6 col-xs-12">
+								<img src="images/gallery/metallica/metallica4-small.jpg" onclick="openModal2();currentSlide(8)" class="gallery-image hover-shadow">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            
+			<!-- Abschnitt - Volbeat
+			================================================== -->
+			<hr class="featurette-divider">
+			<div id="volbeat" class="row featurette">
+				<div class="col-md-7">
+					<h1 id="Volbeat">Volbeat<a data-toggle="tooltip" data-placement="right" title="tooltip des todes"><i class="glyphicon glyphicon-star"></i></a></h1>
+					<p class="lead">asdf</p>
+					<p>A Warriors Call</p>
+					<audio controls>
+						<source src="music/volbeat.mp3" type="audio/mp3">
+						Your browser does not support the audio element.
+					</audio> 
+				</div>
+				<div class="col-md-5">
+					<img class="featurette-image img-responsive center-block" src="images/gif/volbeat.gif" alt="Volbeat Logo">
+				</div>
+			</div>
+				
+			<div class="container">
+				<div class="row">
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/volbeat/volbeat1-small.jpg" onclick="openModal3();currentSlide(9)" class="gallery-image hover-shadow">
+					</div>
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/volbeat/volbeat2-small.jpg" onclick="openModal3();currentSlide(10)" class="gallery-image hover-shadow">
+					</div>
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/volbeat/volbeat3-small.png" onclick="openModal3();currentSlide(11)" class="gallery-image hover-shadow">
+					</div>
+					<div class="column col-md-6 col-sm-6 col-xs-12">
+						<img src="images/gallery/volbeat/volbeat4-small.jpg" onclick="openModal3();currentSlide(12)" class="gallery-image hover-shadow">
+					</div>
+				</div>
+			</div>
+			
+			<!--Modaler Dialog 1-->
+			<div id="myModal1" class="modal">
+				<span class="close cursor" onclick="closeModal()">&times;</span>
+				<div class="modal-content">
+					<div class="mySlides">
+						<div class="numbertext">1 / 4</div>
+						<img src="images/gallery/battlebeast/battlebeast1.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">2 / 4</div>
+						<img src="images/gallery/battlebeast/battlebeast2.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">3 / 4</div>
+						<img src="images/gallery/battlebeast/battlebeast3.png" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">4 / 4</div>
+						<img src="images/gallery/battlebeast/battlebeast4.png" style="width:100%">
+					</div>
+
+					<div class="caption-container">
+						<p id="caption"></p>
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/battlebeast/battlebeast1-small.jpg" onclick="currentSlide(1)" alt="1">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/battlebeast/battlebeast2-small.jpg" onclick="currentSlide(2)" alt="2">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/battlebeast/battlebeast3-small.png" onclick="currentSlide(3)" alt="3">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/battlebeast/battlebeast4-small.png" onclick="currentSlide(4)" alt="4">
+					</div>
+				</div>
+			</div>
+			
+			<!--Modaler Dialog 2-->
+			<div id="myModal2" class="modal">
+				<span class="close cursor" onclick="closeModal()">&times;</span>
+				<div class="modal-content">
+					<div class="mySlides">
+						<div class="numbertext">1 / 4</div>
+						<img src="images/gallery/metallica/metallica1.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">2 / 4</div>
+						<img src="images/gallery/metallica/metallica2.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">3 / 4</div>
+						<img src="images/gallery/metallica/metallica3.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">4 / 4</div>
+						<img src="images/gallery/metallica/metallica4.jpg" style="width:100%">
+					</div>
+
+					<div class="caption-container">
+						<p id="caption"></p>
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/metallica/metallica1-small.jpg" onclick="currentSlide(5)" alt="1">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/metallica/metallica2-small.jpg" onclick="currentSlide(6)" alt="2">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/metallica/metallica3-small.jpg" onclick="currentSlide(7)" alt="3">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/metallica/metallica4-small.jpg" onclick="currentSlide(8)" alt="4">
+					</div>
+				</div>
+			</div>
+			
+			<!--Modaler Dialog 3-->
+			<div id="myModal3" class="modal">
+				<span class="close cursor" onclick="closeModal()">&times;</span>
+				<div class="modal-content">
+					<div class="mySlides">
+						<div class="numbertext">1 / 4</div>
+						<img src="images/gallery/volbeat/volbeat1.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">2 / 4</div>
+						<img src="images/gallery/volbeat/volbeat2.jpg" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">3 / 4</div>
+						<img src="images/gallery/volbeat/volbeat3.png" style="width:100%">
+					</div>
+
+					<div class="mySlides">
+						<div class="numbertext">4 / 4</div>
+						<img src="images/gallery/volbeat/volbeat4.jpg" style="width:100%">
+					</div>
+
+					<div class="caption-container">
+						<p id="caption"></p>
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/volbeat/volbeat1-small.jpg" onclick="currentSlide(9)" alt="1">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/volbeat/volbeat2-small.jpg" onclick="currentSlide(10)" alt="2">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/volbeat/volbeat3-small.png" onclick="currentSlide(11)" alt="3">
+					</div>
+
+					<div class="column">
+						<img class="demo" src="images/gallery/volbeat/volbeat4-small.jpg" onclick="currentSlide(12)" alt="4">
+					</div>
+				</div>
+			</div>
+			
+			<!-- Abschnitt - Footer
+			================================================== -->  
+			<hr class="featurette-divider">
+			
+			
+			<footer id="impressum">
+                <h1 id="SinnDieserSeite">Impressum<a data-toggle="tooltip" data-placement="right" title="tooltip des todes"><i class="glyphicon glyphicon-star"></i></a></h1>
+				
+				<div class="column col-md-6 col-sm-6 col-xs-12">
+					<p>User Team:</p>
+					<img src="images/team-small.png" />
+				</div>
+				
+				<div class="column col-md-6 col-sm-6 col-xs-12">
+					<p>Sehen Sie uns bei unserer Arbeit zu:</p>
+					<video width="480" height="320" controls="controls">
+						<source src="videos/unsere_arbeit.mp4" type="video/mp4">
+					</video>
+				</div>
+				
+				<p class="pull-right"><a href="#">Zurück nach oben</a></p>
+				<p>&copy; 2017 M &amp; N &middot; <a href="#">Datenschutz</a> &middot; <a href="#">AGB</a></p>
+			</footer>
+				
+		</div> <!--Div Ende / Ganzer Inhalt -->
+    </body>
+</html>
